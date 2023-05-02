@@ -298,4 +298,7 @@ if __name__ == "__main__":
                                      args=(db_path, ))
   clear_db_thread.daemon = True  # 设置为守护线程，这样在主程序结束时，线程也会结束
   clear_db_thread.start()
-  app.run(debug=True, host='0.0.0.0')
+
+@app.route('/')
+def home():
+    return 'Hello, World!'
